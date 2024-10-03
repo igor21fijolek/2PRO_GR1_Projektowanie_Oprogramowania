@@ -6,8 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <h1>edited</h1>
-    <h1>trzeci</h1>
+    <h1 id="licznik">1</h1>
+    <input type="button" onclick="licznik()" value="1">
+    <script>
+        let x = document.getElementById("licznik");
+        let num = 0;
+        function licznik()
+        {
+            num+=1
+            x.textContent = num;
+        }
+    </script>
 </body>
 </html>
