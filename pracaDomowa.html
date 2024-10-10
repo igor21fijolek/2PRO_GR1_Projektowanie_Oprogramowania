@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="kontener">
+        <input type="text" id="tekst"><button>klik</button>
+        <p id="wynik"></p>
+    </div>
+    <script>
+        let inpt = document.querySelector("div input");
+        let btn  = document.querySelector("button");
+        btn.addEventListener("click", function()
+    {
+        document.getElementById("wynik").innerHTML = `twój tekst to: ${inpt.value}`
+    })
+    </script>
+</body>
+</html>
