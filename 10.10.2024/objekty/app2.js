@@ -11,7 +11,7 @@
 
 async function getData(){
     const data = await fetch('https://restcountries.com/v3.1/all')
-    const json = await data.json()
+    const json = await data.json() 
     console.log(json);
 
     return json
@@ -47,7 +47,7 @@ async function getData(){
         div.appendChild(h5);
         h3.textContent = data[i].capital;
         h4.textContent = data[i].population;
-        h5.textContent = data[i].continents;
+        h5.textContent = data[i].continents.join[", "];
         div.classList.add("flip-in-hor-bottom")
      }
 }
