@@ -1,5 +1,5 @@
 body{
-    background-color: lightgrey;
+    background-color: #2d3436
 }
 #wynik{
     width: 500px;
@@ -8,6 +8,7 @@ body{
     margin-right: auto;
     text-align:center;
     border-radius: 5px;
+    background-color: #dfe6e9;
 }
 
 img{
@@ -17,28 +18,40 @@ img{
     border-radius: 20px;
 }
 #punktacja{
-    width: 100%;
+    width: 60%;
     height: 200px;
-    background-color: gray;
+    background-color:  #dfe6e9;
+    padding: 5px;
     margin-bottom: 20px;
     border-radius: 20px ;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .odp
 {
     text-align: center;
 }
 button{
-    padding: 10px;
-    background-color: grey;
-    color: white;
+    padding: 20px;
+    background-color: #74b9ff;
+    color: black;
     border: none;
+    margin: 10px;
 }
 input{
-    padding: 10px;
+    padding: 20px;
+    width: 300px;
+    background-color: #74b9ff;
+    color: black;
+    border: none;
+    text-align: center;
+}
+input::placeholder{
+    color: black;
 }
 h1{
-    background-color: grey;
+    background-color: #f0f0f0;
     width: 90%;
     margin-left: auto;
     margin: auto;
@@ -47,4 +60,10 @@ h1{
 }
 #naglowek{
     text-align: center;
+    width: 60%;
+    padding: 5px;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f0f0f0;
 }

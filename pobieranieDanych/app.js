@@ -39,6 +39,7 @@ btn.addEventListener("click", function(){
         p1.textContent = punktacja
         img.setAttribute("src", country.flags.png)
         h1.textContent = country.name.common
+        inp.value = " "
         gra()
     }
     else if(inp.value != stolica){
@@ -46,17 +47,23 @@ btn.addEventListener("click", function(){
         p2.textContent = punktacja2
         img.setAttribute("src", country.flags.png)
         h1.textContent = country.name.common
+        inp.value = " "
         gra()
     }
     if(punktacja2 == 5){
         let p = document.createElement("p")
+        let br = document.createElement("br")
+        alert(`Przegrałeś!!! Sprubuj ponownie`)
         p.textContent = `Przegrałes! kliknij przycisk by zagrac ponownie`
         p.style.textAlign = "center"
+        p.style.color = "rgb(197, 68, 68)"
         document.querySelector("body").appendChild(p)
+        p.appendChild(br)
         let button = document.createElement("button")
         button.innerHTML = `zagraj ponownie`
         button.setAttribute("onclick","window.location.reload()" )
         p.appendChild(button)
+        inp.value = " "
         
     }
 })
