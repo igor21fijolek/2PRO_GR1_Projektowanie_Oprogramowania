@@ -60,6 +60,8 @@ btn.addEventListener("click", function(){
     }
     
     if(punktacja2 == 5){
+        inp.remove()
+        btn.remove()
         let p = document.createElement("p")
         let br = document.createElement("br")
         alert(`Przegrałeś!!! Sprubuj ponownie`)
