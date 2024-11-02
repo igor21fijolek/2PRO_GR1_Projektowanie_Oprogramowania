@@ -16,6 +16,10 @@ let p2 = document.getElementById("niepoprawne")
 
 let country
 
+let odp = document.createElement("h3")
+odp.textContent = " "
+odp.style.fontWeight = "bold"
+
 async function gra(){
     let countries  = await getData()
     country = countries[Math.floor(Math.random() * countries.length)]
@@ -23,6 +27,7 @@ async function gra(){
     h1.textContent = country.name.common
     div.appendChild(img)
     div.appendChild(h1)
+    div.appendChild(odp)
 }
 gra()
 
@@ -30,26 +35,30 @@ let punktacja = 0
 let punktacja2 = 0
 
 btn.addEventListener("click", function(){
-
     let stolica = country.capital;
     console.log(stolica,typeof(stolica));
     if(inp.value == stolica)
     {
         punktacja++
         p1.textContent = punktacja
+        p1.style.color = "green"
         img.setAttribute("src", country.flags.png)
         h1.textContent = country.name.common
         inp.value = " "
+        odp.textContent = " "
         gra()
     }
     else if(inp.value != stolica){
         punktacja2++
         p2.textContent = punktacja2
+        p2.style.color = "tomato"
         img.setAttribute("src", country.flags.png)
         h1.textContent = country.name.common
         inp.value = " "
+        odp.textContent = `Poprawna odpowiedź to: ${stolica}`
         gra()
     }
+    
     if(punktacja2 == 5){
         let p = document.createElement("p")
         let br = document.createElement("br")
