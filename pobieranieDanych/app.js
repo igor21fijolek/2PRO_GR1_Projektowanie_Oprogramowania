@@ -28,6 +28,8 @@ async function gra(){
     div.appendChild(img)
     div.appendChild(h1)
     div.appendChild(odp)
+    let capital = country.capital;
+    console.log(capital);
 }
 gra()
 
@@ -36,8 +38,10 @@ let punktacja2 = 0
 
 btn.addEventListener("click", function(){
     let stolica = country.capital;
+    let table = document.querySelector("table")
+    
     console.log(stolica,typeof(stolica));
-    if(inp.value == stolica)
+    if(stolica.includes(inp.value.trim()))
     {
         punktacja++
         p1.textContent = punktacja
@@ -48,17 +52,34 @@ btn.addEventListener("click", function(){
         odp.textContent = " "
         gra()
     }
-    else if(inp.value != stolica){
+    else {
         punktacja2++
         p2.textContent = punktacja2
         p2.style.color = "tomato"
+        let tr = document.createElement("tr")
+        let td = document.createElement("td")
+        let tdOdp = document.createElement("td")
+        let tdKraj = document.createElement("td")
+        if(inp.value.trim() === ""){
+            td.textContent = "Brak odp"
+            tdOdp.textContent = stolica
+        }
+        else{
+            td.textContent = inp.value.trim()
+            tdOdp.textContent = stolica
+        }
+        tdKraj.textContent = country.name.common; 
         img.setAttribute("src", country.flags.png)
         h1.textContent = country.name.common
         inp.value = " "
         odp.textContent = `Poprawna odpowiedź to: ${stolica}`
+        
+       tr.append(tdKraj)
+       tr.appendChild(td)
+       tr.appendChild(tdOdp)
+        table.appendChild(tr)
         gra()
     }
-    
     if(punktacja2 == 5){
         inp.remove()
         btn.remove()
