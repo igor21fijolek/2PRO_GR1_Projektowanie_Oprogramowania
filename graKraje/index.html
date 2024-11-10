@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Populacja</title>
     <link rel="stylesheet" href="styl.css">
 </head>
+
 <body>
-    <h1 id="naglowek">Który kraj ma większą populacje?</h1>
-    
+    <h1 id="naglowek">Który kraj ma większą populację?</h1>
     <div id="kraje">
         <div id="flex">
-        <div id="kraj1"></div>
-        <div id="kraj2"></div>
+            <div id="kraj1">
+                <img id="flag1">
+                <div id="countryName1"></div>    
+                <div class='countryPopulation hidden' id="countryPopulation1"></div>    
+            </div>
+            <div id="kraj2">
+                <img id="flag2">
+                <div id="countryName2">Populacja: </div>    
+                <div class='countryPopulation hidden' id="countryPopulation2">Populacja: </div>    
+            </div>
+        </div>
+        <button class="hidden" id="nextStep">Następne</button>
     </div>
-        <button>Nastepne</button>
-    </div>
-    
     <div id="punktacja">
-        <h2>Punktacja</h3>
-        <p id="poprawne">Poprawne</p>
-        <p id="niepoprawne">Niepoprawne</p>
+        <h2 class="bg_grey">Punktacja</h2>
+        <div class="bg_grey">Poprawne: <span class="bg_grey" id="poprawne"></span></div>
+        <div class="bg_grey">Niepoprawne: <span class="bg_grey" id="niepoprawne"></span></div>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>
